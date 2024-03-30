@@ -29,8 +29,8 @@ To get started with the Time Table Automation project, follow these steps:
 3. Compile and run the project:
 
     ```
-    javac Timetable.java
-    java Timetable
+    javac Main.java
+    java Main
     ```
 
 4. Follow the instructions provided in the application to create and manage timetables.
