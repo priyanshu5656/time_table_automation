@@ -14,16 +14,22 @@ class main{
         JFrame f=new JFrame("Time Table Generator");  
         JFrame s=new JFrame();  
         JPanel home=new JPanel();
-        JLabel l1=new JLabel("Welcome to Timetable Generator");
+        JLabel l1 = new JLabel("<html>Welcome to Timetable Automation Tool</html>");
         l1.setBounds(250,50,850,200);
         l1.setFont(new Font("TimesRoman",Font.BOLD,35));
         BufferedImage image = ImageIO.read(new File("mnnit.jpg"));
         JLabel label = new JLabel(new ImageIcon(image));
         label.setSize(600,500);
         label.setBounds(300,20,500,600);
+        // Additional text label
+        JLabel additionalText = new JLabel("Mentored By Professor Neeraj Tyagi");
+        additionalText.setFont(new Font("Arial", Font.PLAIN, 12));
+        additionalText.setBounds(10, 10,250 ,20);
+
         home.setLayout(null);
-        home.setBackground(Color.orange);
+        home.setBackground(Color.white);
         home.add(label);
+        home.add(additionalText);
         home.add(l1);
         JPanel view=new JPanel(); 
         String[] Timet={"Select",};
@@ -59,7 +65,7 @@ class main{
                     }
                 }
                 view.revalidate();
-                view.repaint();  
+                view.repaint();
             }
         });
         pf.addActionListener(new ActionListener(){  
@@ -74,7 +80,7 @@ class main{
             }
         });
         view.setLayout(null);
-        view.setBackground(Color.orange);
+        view.setBackground(Color.white);
         view.add(vl); 
         view.add(cb);
         view.add(pf);
@@ -94,7 +100,7 @@ class main{
         d3.setBounds(250,125,200,50);
         JButton d4 = new JButton("Delete");
         d4.setBounds(550,125,200,50);
-        d4.setBackground(Color.cyan);
+        d4.setBackground(Color.gray);
         JLabel d5 = new JLabel("Delete Professor");
         d5.setFont(new Font("TimesRoman",Font.BOLD,30));
         d5.setBounds(50,200,500,50);
@@ -105,7 +111,7 @@ class main{
         d7.setBounds(250,275,200,50);
         JButton d8 = new JButton("Delete");
         d8.setBounds(550,275,200,50);
-        d8.setBackground(Color.cyan);
+        d8.setBackground(Color.green);
         JLabel d9 = new JLabel("Delete Batch");
         d9.setFont(new Font("TimesRoman",Font.BOLD,30));
         d9.setBounds(50,350,500,50);
@@ -116,8 +122,8 @@ class main{
         d11.setBounds(250,425,200,50);
         JButton d12 = new JButton("Delete");
         d12.setBounds(550,425,200,50);
-        d12.setBackground(Color.cyan);
-        delete.setBackground(Color.orange);
+        d12.setBackground(Color.green);
+        delete.setBackground(Color.white);
         delete.setLayout(null);
         delete.add(d1);
         delete.add(d2);
@@ -149,10 +155,10 @@ class main{
         cb7.setBounds(550,275,200,50);
         JButton cb5 = new JButton("ADD");
         cb5.setBounds(850,275,200,50);
-        cb5.setBackground(Color.cyan);
+        cb5.setBackground(Color.green);
         JButton cb6 = new JButton("Create");
         cb6.setBounds(550,100,200,50);
-        cb6.setBackground(Color.cyan);
+        cb6.setBackground(Color.green);
         cb6.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 cb.addItem(cb2.getText());
@@ -187,7 +193,7 @@ class main{
             }
         });
         createBatch.setLayout(null);
-        createBatch.setBackground(Color.orange);
+        createBatch.setBackground(Color.white);
         createBatch.add(cb1);
         createBatch.add(cb2);
         createBatch.add(cb3);
@@ -210,7 +216,7 @@ class main{
         JComboBox cp4=new JComboBox(courses);
         cp4.setBounds(250,275,200,50);
         JButton cp5=new JButton("Add");
-        cp5.setBackground(Color.cyan);
+        cp5.setBackground(Color.green);
         cp5.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 if(cp4.getSelectedIndex()!=0){
@@ -226,7 +232,7 @@ class main{
         cp5.setBounds(550,275,200,50);
         JButton cp6=new JButton("Create");
         cp6.setBounds(550,100,200,50);
-        cp6.setBackground(Color.cyan);
+        cp6.setBackground(Color.green);
         cp6.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pf.addItem(cp2.getText());
@@ -239,7 +245,7 @@ class main{
             }
         });
         createProfessor.setLayout(null);
-        createProfessor.setBackground(Color.orange);
+        createProfessor.setBackground(Color.white);
         createProfessor.add(cp1);
         createProfessor.add(cp2);
         createProfessor.add(cp3);
@@ -262,7 +268,7 @@ class main{
         cc4.setBounds(250,275,200,50);
         JButton cc5 = new JButton("Create");
         cc5.setBounds(250,450,200,50);
-        cc5.setBackground(Color.cyan);
+        cc5.setBackground(Color.green);
         cc5.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){ 
                 d3.addItem(cc2.getText());
@@ -275,13 +281,21 @@ class main{
             }
         });
         createCourse.setLayout(null);
-        createCourse.setBackground(Color.orange);
+        createCourse.setBackground(Color.white);
         createCourse.add(cc1);
         createCourse.add(cc2);
         createCourse.add(cc3);
         createCourse.add(cc4);
         createCourse.add(cc5);
-    
+        JPanel createLab=new JPanel();
+
+        //  add functionality of labs here
+
+        JPanel createSize=new JPanel();
+
+
+        //add functionality of size of classrom and batches here
+
     
     
         t.add("Home",home);  
@@ -289,8 +303,11 @@ class main{
         t.add("Create Batch",createBatch);
         t.add("Create Course",createCourse);
         t.add("Create Professor",createProfessor);
-        t.add("Delete",delete); 
-        t.setBackground(Color.green);  
+        t.add("Delete",delete);
+        t.add("Labs",createLab);
+        t.add("Size",createSize);
+       
+        t.setBackground(Color.red);  
         f.add(t);  
         f.setSize(1500,800);  
         t.setBounds(50,50,1200,600); 
