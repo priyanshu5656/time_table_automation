@@ -10,6 +10,7 @@ public class Batch extends Timetable {
             for (j = 0; j < 9; j++) {
                 if (y.Table[i][j] == null && this.Table[i][j] == null && !isCourseScheduledOnDay(x, i)) {
                     list.add(i * 10 + j);
+                    break;
                 }
             }
         }
